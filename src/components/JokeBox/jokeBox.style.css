@@ -5,8 +5,11 @@
   margin: 40px auto;
   width: 60%;
   box-shadow: 4px 6px 18px rgb(71 71 71 / 34%);
-  transition: all 0.4s;
   border-radius: 5px;
+}
+
+.jokeBox p {
+  line-height: 33px;
 }
 
 .category {
@@ -21,4 +24,9 @@
   background-color: blue;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
+}
+
+div.shrink {
+  width: 45%;
 }

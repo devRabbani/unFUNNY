@@ -1,0 +1,14 @@
+.btnReload {
+  width: fit-content;
+  padding: 10px 40px;
+  background-color: blue;
+  cursor: pointer;
+  color: white;
+  margin: 0 auto;
+  box-shadow: 4px 4px 13px rgb(55 54 54 / 46%);
+  transition: all 0.4s;
+}
+
+.btnReload:hover {
+  box-shadow: 3px 3px 13px rgb(55 54 54 / 7%);
+}

@@ -13,11 +13,6 @@ body {
   text-align: center;
 }
 
-.btnReload {
-  width: fit-content;
-  padding: 10px 40px;
-  background-color: blue;
-  cursor: pointer;
-  color: white;
-  margin: 0 auto;
+.App h1 {
+  margin-top: 40px;
 }
