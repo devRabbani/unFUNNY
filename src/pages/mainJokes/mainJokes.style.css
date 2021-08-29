@@ -4,11 +4,46 @@
   background-color: blue;
   cursor: pointer;
   color: white;
-  margin: 0 auto;
+  /* margin: 0 auto 10px; */
   box-shadow: 4px 4px 13px rgb(55 54 54 / 46%);
   transition: all 0.4s;
 }
 
 .btnReload:hover {
   box-shadow: 3px 3px 13px rgb(55 54 54 / 7%);
+}
+
+.btnReload.loading {
+  background-color: #6d6ddf;
+  cursor: wait;
+  color: #b1b6f1;
+}
+
+select {
+  width: 300px;
+  text-align: center;
+  padding: 5px;
+  font-size: 17px;
+  margin-top: 25px;
+  outline: none;
+  cursor: pointer;
+  color: #757575;
+  box-shadow: 1px 2px 5px solid rgba(0, 0, 0, 0.836);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 700px) {
+  div.jokeBox {
+    width: 85%;
+  }
+  div.jokeBox.shrink {
+    width: 80%;
+  }
 }

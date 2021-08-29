@@ -1,20 +1,21 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import './App.css'
 import MainJokes from './pages/mainJokes/mainJokes.component'
-import SecondJokes from './pages/secondJokes/secondJokes.component'
 import { Switch, Route } from 'react-router-dom'
 
-const App = () => {
-  console.log(window.location.pathname)
+const SecondJokes = lazy(() =>
+  import('./pages/secondJokes/secondJokes.component')
+)
 
+const App = () => {
   return (
     <div className='App'>
-      <h1>notFUNNY!</h1>
-      <Switch>
-        <Route exact path='/' component={MainJokes} />
-        <Route exact path='/achhawala' component={SecondJokes} />
-        <Route component={SecondJokes} />
-      </Switch>
+      <Suspense fallback={null}>
+        <Switch>
+          <Route exact path='/' component={MainJokes} />
+          <Route exact path='/achhawala' component={SecondJokes} />
+        </Switch>
+      </Suspense>
     </div>
   )
 }

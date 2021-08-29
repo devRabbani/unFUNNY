@@ -1,11 +1,23 @@
 .jokeBox {
   min-width: 180px;
   background-color: rgb(255, 255, 255);
-  padding: 50px 65px;
-  margin: 40px auto;
+  padding: 40px;
+  margin: 25px auto 40px;
   width: 60%;
   box-shadow: 4px 6px 18px rgb(71 71 71 / 34%);
   border-radius: 5px;
+  position: relative;
+}
+
+.cardLoading {
+  width: 80vw;
+  background-color: rgb(179 178 178);
+  height: 44vh;
+  opacity: 0.7;
+  max-width: 600px;
+  max-height: 260px;
+  border-radius: 5px;
+  margin: 25px auto 40px;
 }
 
 .jokeBox p {
@@ -13,9 +25,9 @@
 }
 
 .category {
-  margin-top: 60px;
   font-weight: 300;
   font-size: 14px;
+  margin-top: 26px;
 }
 
 .category span {
@@ -29,4 +41,45 @@
 
 div.shrink {
   width: 45%;
+}
+
+.copy {
+  font-size: 32px;
+  display: block;
+  color: blue;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 7px;
+}
+.copy.done {
+  color: #757575;
+}
+
+@media screen and (max-width: 450px) {
+  .copy {
+    position: static;
+    padding-top: 7px;
+  }
+  .category {
+    margin-top: 0;
+  }
+  .bottomDiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+  }
+  div.jokeBox,
+  div.jokeBox.shrink {
+    padding: 25px 20px 12px;
+    width: 93%;
+  }
+
+  .jokeBox p {
+    line-height: 28px;
+  }
+  a {
+    padding: 8px 27px;
+  }
 }

@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import JokeBox from '../../components/JokeBox/jokeBox.component'
+import React, { useState, useEffect, lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
+const JokeBox = lazy(() => import('../../components/JokeBox/jokeBox.component'))
 
 const SecondJokes = () => {
   const [jokes, setJokes] = useState('')
+  const [btnLoading, setBtnLoading] = useState(false)
 
   const fetchJoke = async () => {
+    setBtnLoading(true)
     const res = await fetch(
       'http://api.icndb.com/jokes/random?firstName=Rabbani&lastName=bhaai'
     )
     const data = await res.json()
     setJokes(data.value)
+    setBtnLoading(false)
   }
 
   useEffect(() => {
@@ -18,14 +21,24 @@ const SecondJokes = () => {
   }, [])
 
   return (
-    <div className='App'>
-      <JokeBox data={jokes} />
-      <div onClick={fetchJoke} className='btnReload'>
+    <div className='flex'>
+      {btnLoading ? (
+        <h1 className='nowfunny'>nowFUNNY&#128534;!</h1>
+      ) : (
+        <h1 className='nowfunny'>nowFUNNY&#128520;!</h1>
+      )}
+      <Suspense fallback={null}>
+        <JokeBox data={jokes} />
+      </Suspense>
+
+      <div
+        onClick={fetchJoke}
+        className={`btnReload ${btnLoading ? 'loading' : ''}`}
+      >
         Another One
       </div>
-      <div>
-        <Link to='/'>Back to Home</Link>
-      </div>
+      <br />
+      <Link to='/'>Back to Home</Link>
     </div>
   )
 }
