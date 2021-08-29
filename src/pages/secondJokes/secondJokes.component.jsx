@@ -9,7 +9,7 @@ const SecondJokes = () => {
   const fetchJoke = async () => {
     setBtnLoading(true)
     const res = await fetch(
-      'http://api.icndb.com/jokes/random?firstName=Rabbani&lastName=bhaai'
+      'https://api.icndb.com/jokes/random?firstName=Rabbani&lastName=bhaai'
     )
     const data = await res.json()
     setJokes(data.value)
