@@ -15,6 +15,11 @@ body {
   max-width: 1500px;
 }
 
+h1 {
+  font-size: 2.5rem;
+  margin-top: 55px;
+}
+
 a {
   text-decoration: none;
   color: #555454;
@@ -24,7 +29,7 @@ a {
   font-weight: 600;
   border-radius: 29px;
   background-color: white;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-out;
 }
 
 a:hover,
@@ -33,6 +38,7 @@ a:active {
   color: white;
 }
 .nowfunny {
+  margin-top: 120px;
   margin-bottom: 25px;
   color: red;
 }
@@ -56,9 +62,8 @@ a:active {
   bottom: 0;
   left: 0;
   width: 100%;
-  /* box-shadow: 0 -2px 5px rgba(90, 89, 89, 0.815); */
   z-index: 6;
-  background-color: rgb(31 51 240);
+  background-color: rgb(70 83 209);
 }
 
 .mobileDiv a,
@@ -73,30 +78,23 @@ a:active {
   box-shadow: none;
   color: #ffffffed;
   border-radius: 0;
-  box-shadow: 0 -2px 5px rgba(90, 89, 89, 0.815);
+  box-shadow: 0 -2px 3px rgb(0 16 87 / 73%);
 }
 .mobileDiv .btnReload {
   border-left: 2px solid rgb(255 247 247 / 54%);
 }
 
 .mobileDiv a:active,
-.btnReload.loading {
-  background-color: #6d6ddf;
-  color: #b1b6f1;
-  box-shadow: 0 -2px 5px rgba(185, 185, 185, 0.815);
-}
+.mobileDiv .btnReload:active {
+  /* background-color: #6d6ddf; */
+  /* color: #b1b6f1; */
+  box-shadow: 0 -2px 5px rgb(0 16 87 / 35%);
 
-.btnReload.loading {
-  /* background-color: #6d6ddf;
-  color: #b1b6f1; */
-  cursor: wait;
+  background-color: #0000b4;
+  color: #e0e0e0;
 }
 
 @media screen and (max-width: 450px) {
-  div.flex {
-    display: block;
-    min-height: fit-content;
-  }
   .mobileDiv {
     display: flex;
   }
@@ -104,6 +102,7 @@ a:active {
   .btnDiv {
     display: none;
   }
+
   h1 {
     margin-top: 60px;
   }

@@ -1,14 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Buttons = ({ fetchJoke, btnLoading, isSecPath }) => {
+const Buttons = ({ fetchJoke, isSecPath }) => {
   return (
     <div className='buttons'>
       <div className='btnDiv'>
-        <div
-          onClick={fetchJoke}
-          className={`btnReload ${btnLoading ? 'loading' : ''}`}
-        >
+        <div onClick={fetchJoke} className='btnReload'>
           Another One
         </div>
         {isSecPath ? (
@@ -19,10 +16,7 @@ const Buttons = ({ fetchJoke, btnLoading, isSecPath }) => {
       </div>
 
       <div className='mobileDiv'>
-        <div
-          onClick={fetchJoke}
-          className={`btnReload ${btnLoading ? 'loading' : ''}`}
-        >
+        <div onClick={fetchJoke} className='btnReload'>
           Another One
         </div>
         {isSecPath ? (

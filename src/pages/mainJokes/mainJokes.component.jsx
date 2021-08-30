@@ -1,8 +1,9 @@
 import React, { lazy, Suspense, useEffect } from 'react'
+import SkeletonCard from '../../skeleton/skeletonCard'
 import './mainJokes.style.css'
 const JokeBox = lazy(() => import('../../components/JokeBox/jokeBox.component'))
 
-const MainJokes = ({ fetchJoke, catg, setCatg, jokes }) => {
+const MainJokes = ({ fetchJoke, catg, setCatg, jokes, btnLoading }) => {
   useEffect(() => {
     fetchJoke()
   }, [catg])
@@ -19,7 +20,11 @@ const MainJokes = ({ fetchJoke, catg, setCatg, jokes }) => {
         <option value='Pun'>Pun</option>
       </select>
       <Suspense fallback={null}>
-        <JokeBox data={jokes} setCatg={setCatg} />
+        {!btnLoading ? (
+          <JokeBox data={jokes} setCatg={setCatg} />
+        ) : (
+          <SkeletonCard />
+        )}
       </Suspense>
     </>
   )

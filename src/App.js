@@ -1,40 +1,38 @@
 import React, { lazy, Suspense, useState } from 'react'
 import './App.css'
-import MainJokes from './pages/mainJokes/mainJokes.component'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import Buttons from './components/Buttons/buttons.component'
 
+const MainJokes = lazy(() => import('./pages/mainJokes/mainJokes.component'))
 const SecondJokes = lazy(() =>
   import('./pages/secondJokes/secondJokes.component')
 )
 
 const App = ({ location: { pathname } }) => {
-  const [jokes, setJokes] = useState('')
+  const [jokes1, setJokes1] = useState('')
+  const [jokes2, setJokes2] = useState('')
   const [catg, setCatg] = useState('Any')
   const [btnLoading, setBtnLoading] = useState(false)
-  const isSecPath = pathname === '/achhawala'
 
   const fetchJokeV1 = async () => {
-    setJokes('')
     setBtnLoading(true)
     const res = await fetch(`https://v2.jokeapi.dev/joke/${catg}?type=single`)
     const data = await res.json()
-    setJokes(data)
+    setJokes1(data)
     setBtnLoading(false)
   }
   const fetchJokeV2 = async () => {
-    setJokes('')
     setBtnLoading(true)
     const res = await fetch(
-      'https://api.icndb.com/jokes/random?firstName=Rabbani&lastName=bhaai'
+      'https://api.icndb.com/jokes/random?escape=javascript&firstName=Rabbani&lastName=bhaai'
     )
     const data = await res.json()
-    setJokes(data.value)
+    setJokes2(data.value)
     setBtnLoading(false)
   }
 
   return (
-    <div className='App flex'>
+    <div className='App'>
       {pathname === '/achhawala' ? (
         <h1 className='nowfunny'>
           nowFUNNY!
@@ -50,19 +48,23 @@ const App = ({ location: { pathname } }) => {
           <Route exact path='/'>
             <MainJokes
               fetchJoke={fetchJokeV1}
-              jokes={jokes}
+              jokes={jokes1}
               setCatg={setCatg}
               catg={catg}
+              btnLoading={btnLoading}
             />
           </Route>
           <Route exact path='/achhawala'>
-            <SecondJokes fetchJoke={fetchJokeV2} jokes={jokes} />
+            <SecondJokes
+              fetchJoke={fetchJokeV2}
+              jokes={jokes2}
+              btnLoading={btnLoading}
+            />
           </Route>
         </Switch>
       </Suspense>
       <Buttons
         fetchJoke={pathname === '/achhawala' ? fetchJokeV2 : fetchJokeV1}
-        btnLoading={btnLoading}
         isSecPath={pathname === '/achhawala'}
       />
     </div>
