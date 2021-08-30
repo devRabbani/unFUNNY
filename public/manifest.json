@@ -34,5 +34,17 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "rgb(70 83 209)",
-  "background_color": "rgb(70 83 209)"
+  "background_color": "rgb(70 83 209)",
+  "categories": ["entertainment"],
+  "shortcuts": [
+    {
+      "name": "Get a Random Joke",
+      "url": "/"
+    },
+    {
+      "name": "Rabbani Bhai Special",
+      "url": "/achhawala",
+      "description": "Get a Special Rabbani Bhai's Joke"
+    }
+  ]
 }
