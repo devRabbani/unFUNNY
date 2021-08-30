@@ -9,17 +9,6 @@
   position: relative;
 }
 
-.cardLoading {
-  width: 80vw;
-  background-color: rgb(179 178 178);
-  height: 44vh;
-  opacity: 0.7;
-  max-width: 600px;
-  max-height: 260px;
-  border-radius: 5px;
-  margin: 25px auto 40px;
-}
-
 .jokeBox p {
   line-height: 33px;
 }
@@ -73,13 +62,14 @@ div.shrink {
   div.jokeBox,
   div.jokeBox.shrink {
     padding: 25px 20px 12px;
-    width: 93%;
+    width: 94%;
   }
 
   .jokeBox p {
     line-height: 28px;
   }
-  a {
-    padding: 8px 27px;
+
+  .marginTop {
+    margin-top: 105px;
   }
 }

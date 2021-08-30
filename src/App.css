@@ -7,6 +7,7 @@
 body {
   font-family: 'Roboto Mono', monospace;
   background-color: #bbbbc9;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .App {
@@ -17,13 +18,93 @@ body {
 a {
   text-decoration: none;
   color: #555454;
-  padding: 7px 27px;
+  padding: 8px 27px;
+  display: block;
   border: 2px solid black;
   font-weight: 600;
   border-radius: 29px;
   background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover,
+a:active {
+  background-color: blueviolet;
+  color: white;
 }
 .nowfunny {
   margin-bottom: 25px;
   color: red;
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.btnDiv a,
+.btnDiv .btnReload {
+  margin: auto 10px;
+}
+
+.mobileDiv {
+  position: fixed;
+  display: none;
+  flex-direction: row-reverse;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* box-shadow: 0 -2px 5px rgba(90, 89, 89, 0.815); */
+  z-index: 6;
+  background-color: rgb(31 51 240);
+}
+
+.mobileDiv a,
+.mobileDiv .btnReload {
+  width: 50%;
+  margin: 0;
+  padding: 15px 0;
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: none;
+  color: #ffffffed;
+  border-radius: 0;
+  box-shadow: 0 -2px 5px rgba(90, 89, 89, 0.815);
+}
+.mobileDiv .btnReload {
+  border-left: 2px solid rgb(255 247 247 / 54%);
+}
+
+.mobileDiv a:active,
+.btnReload.loading {
+  background-color: #6d6ddf;
+  color: #b1b6f1;
+  box-shadow: 0 -2px 5px rgba(185, 185, 185, 0.815);
+}
+
+.btnReload.loading {
+  /* background-color: #6d6ddf;
+  color: #b1b6f1; */
+  cursor: wait;
+}
+
+@media screen and (max-width: 450px) {
+  div.flex {
+    display: block;
+    min-height: fit-content;
+  }
+  .mobileDiv {
+    display: flex;
+  }
+
+  .btnDiv {
+    display: none;
+  }
+  h1 {
+    margin-top: 60px;
+  }
 }

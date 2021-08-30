@@ -4,20 +4,20 @@
   background-color: blue;
   cursor: pointer;
   color: white;
-  /* margin: 0 auto 10px; */
   box-shadow: 4px 4px 13px rgb(55 54 54 / 46%);
   transition: all 0.4s;
 }
 
-.btnReload:hover {
+.btnDiv .btnReload:hover,
+.btnDiv .btnReload:active {
   box-shadow: 3px 3px 13px rgb(55 54 54 / 7%);
 }
 
-.btnReload.loading {
+/* .btnReload.loading {
   background-color: #6d6ddf;
   cursor: wait;
   color: #b1b6f1;
-}
+} */
 
 select {
   width: 300px;
@@ -28,7 +28,6 @@ select {
   outline: none;
   cursor: pointer;
   color: #757575;
-  box-shadow: 1px 2px 5px solid rgba(0, 0, 0, 0.836);
 }
 
 .flex {
@@ -45,5 +44,10 @@ select {
   }
   div.jokeBox.shrink {
     width: 80%;
+  }
+}
+@media screen and (max-width: 450px) {
+  select {
+    width: 93%;
   }
 }
