@@ -1,6 +1,6 @@
-import React, { useEffect, lazy, Suspense } from 'react'
+import React, { useEffect } from 'react'
 import SkeletonCardSmall from '../../skeleton/skeletoncardsmall'
-const JokeBox = lazy(() => import('../../components/JokeBox/jokeBox.component'))
+import JokeBox from '../../components/JokeBox/jokeBox.component'
 
 const SecondJokes = ({ fetchJoke, jokes, btnLoading }) => {
   useEffect(() => {
@@ -9,13 +9,11 @@ const SecondJokes = ({ fetchJoke, jokes, btnLoading }) => {
 
   return (
     <>
-      <Suspense fallback={null}>
-        {!btnLoading ? (
-          <JokeBox data={jokes} marginBool />
-        ) : (
-          <SkeletonCardSmall />
-        )}
-      </Suspense>
+      {!btnLoading ? (
+        <JokeBox data={jokes} marginBool />
+      ) : (
+        <SkeletonCardSmall />
+      )}
     </>
   )
 }

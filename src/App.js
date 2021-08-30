@@ -2,6 +2,9 @@ import React, { lazy, Suspense, useState } from 'react'
 import './App.css'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import Buttons from './components/Buttons/buttons.component'
+import SkeletonCard from './skeleton/skeletonCard'
+import SkeletonMain from './skeleton/skeletonMain'
+import SkeletonCardSmall from './skeleton/skeletoncardsmall'
 
 const MainJokes = lazy(() => import('./pages/mainJokes/mainJokes.component'))
 const SecondJokes = lazy(() =>
@@ -43,26 +46,29 @@ const App = ({ location: { pathname } }) => {
           unFUNNY!{btnLoading ? <span>&#128534;</span> : <span>&#128526;</span>}
         </h1>
       )}
-      <Suspense fallback={null}>
-        <Switch>
-          <Route exact path='/'>
-            <MainJokes
-              fetchJoke={fetchJokeV1}
-              jokes={jokes1}
-              setCatg={setCatg}
-              catg={catg}
-              btnLoading={btnLoading}
-            />
-          </Route>
-          <Route exact path='/achhawala'>
-            <SecondJokes
-              fetchJoke={fetchJokeV2}
-              jokes={jokes2}
-              btnLoading={btnLoading}
-            />
-          </Route>
-        </Switch>
+
+      {/* <Switch> */}
+      <Suspense fallback={<SkeletonMain />}>
+        <Route exact path='/'>
+          <MainJokes
+            fetchJoke={fetchJokeV1}
+            jokes={jokes1}
+            setCatg={setCatg}
+            catg={catg}
+            btnLoading={btnLoading}
+          />
+        </Route>
       </Suspense>
+      <Suspense fallback={<SkeletonCardSmall />}>
+        <Route exact path='/achhawala'>
+          <SecondJokes
+            fetchJoke={fetchJokeV2}
+            jokes={jokes2}
+            btnLoading={btnLoading}
+          />
+        </Route>
+      </Suspense>
+      {/* </Switch> */}
       <Buttons
         fetchJoke={pathname === '/achhawala' ? fetchJokeV2 : fetchJokeV1}
         isSecPath={pathname === '/achhawala'}

@@ -1,4 +1,5 @@
 import React from 'react'
+import Shimmer from './shimmer'
 import SkeletonElements from './skeletonElements'
 
 const SkeletonCard = () => {
@@ -13,6 +14,7 @@ const SkeletonCard = () => {
         <SkeletonElements type='category' />
         <SkeletonElements type='rcategory' />
       </div>
+      <Shimmer />
     </div>
   )
 }
