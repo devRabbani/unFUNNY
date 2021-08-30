@@ -33,6 +33,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#448aff",
-  "background_color": "#448aff"
+  "theme_color": "rgb(70 83 209)",
+  "background_color": "rgb(70 83 209)"
 }
