@@ -8,6 +8,7 @@ const SkeletonCardSmall = () => {
       <SkeletonElements type='text' />
       <SkeletonElements type='text' />
       <SkeletonElements type='text' />
+      <SkeletonElements type='copy' />
     </div>
   )
 }

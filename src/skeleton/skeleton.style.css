@@ -32,7 +32,9 @@
 .hidden {
   display: none;
 }
-
+#shrink {
+  margin-top: 105px;
+}
 @media screen and (max-width: 450px) {
   .skeleton-wrapper,
   #shrink {
@@ -40,9 +42,6 @@
     width: 94%;
   }
 
-  #shrink {
-    margin-top: 105px;
-  }
   .hidden {
     display: block;
   }
@@ -51,5 +50,9 @@
     width: 50px;
     height: 22px;
     margin: 12px auto 7px 12px;
+  }
+  .skeleton.copy {
+    width: 34px;
+    height: 29px;
   }
 }

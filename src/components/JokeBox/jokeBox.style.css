@@ -44,6 +44,9 @@ div.shrink {
 .copy.done {
   color: #757575;
 }
+.marginTop {
+  margin-top: 105px;
+}
 
 @media screen and (max-width: 450px) {
   .copy {
@@ -67,9 +70,5 @@ div.shrink {
 
   .jokeBox p {
     line-height: 28px;
-  }
-
-  .marginTop {
-    margin-top: 105px;
   }
 }
