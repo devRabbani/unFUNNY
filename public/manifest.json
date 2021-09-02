@@ -21,8 +21,7 @@
     {
       "src": "logo384.png",
       "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     },
     {
       "src": "logo512.png",
