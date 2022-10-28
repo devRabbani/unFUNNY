@@ -13,6 +13,7 @@ body {
 .App {
   text-align: center;
   max-width: 1500px;
+  margin-inline: auto;
 }
 
 h1 {

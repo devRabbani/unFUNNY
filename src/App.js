@@ -26,11 +26,14 @@ const App = ({ location: { pathname } }) => {
   }
   const fetchJokeV2 = async () => {
     setBtnLoading(true)
-    const res = await fetch(
-      'https://api.icndb.com/jokes/random?escape=javascript&firstName=Rabbani&lastName=bhaai'
-    )
+    const res = await fetch('https://icanhazdadjoke.com/', {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+      },
+    })
     const data = await res.json()
-    setJokes2(data.value)
+    setJokes2(data)
     setBtnLoading(false)
   }
 
