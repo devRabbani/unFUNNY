@@ -10,7 +10,7 @@ const SecondJokes = ({ fetchJoke, jokes, btnLoading }) => {
   return (
     <>
       {!btnLoading ? (
-        <JokeBox data={jokes} marginBool />
+        <JokeBox data={{ joke: jokes?.value }} marginBool />
       ) : (
         <SkeletonCardSmall />
       )}
