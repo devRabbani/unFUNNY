@@ -15,12 +15,12 @@ const JokeBox = ({ data, setCatg, marginBool }) => {
 
   return (
     <>
-      {marginBool && <div className='marginTop'></div>}
-      <div className={`jokeBox ${!data.category ? 'shrink' : ''}`}>
-        <p className='joke'>{data.joke}</p>
-        <div className='bottomDiv'>
-          {data.category && (
-            <p className='category'>
+      {marginBool && <div className="marginTop"></div>}
+      <div className={`jokeBox ${!data?.category ? 'shrink' : ''}`}>
+        <p className="joke">{data.joke}</p>
+        <div className="bottomDiv">
+          {data?.category && (
+            <p className="category">
               Category :{' '}
               <span onClick={() => setCatg(data.category)}>
                 {data.category}
